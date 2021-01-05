@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Set your words{% endblock %}
+
+{% block content %}
+
+<h1>Set your words</h1>
+<form action="/madlibs/result">
+    <div>
+        {% for word in prompts %}
+        <div>
+            <label>{{ word }}:</label>
+            <input type="text" name="{{ word }}">
+        </div>
+        {% endfor %}
+    </div>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
